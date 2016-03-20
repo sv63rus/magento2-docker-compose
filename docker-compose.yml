@@ -12,7 +12,7 @@ app:
     - appdata
   environment:
     - APP_MAGE_MODE=production
-    - VIRTUAL_HOST=mysite.com
+#   - VIRTUAL_HOST=m2.docker
 
 appdata:
   image: tianon/true
@@ -21,7 +21,7 @@ appdata:
     - ~/.composer:/root/.composer
 
 "php-fpm":
-  image: mageinferno/magento2-php:7.0.2-fpm-0
+  image: dimasch/magento2-php:7.0.2-fpm-1
   links:
     - db
   volumes_from:
@@ -48,7 +48,7 @@ dbdata:
     - /var/lib/mysql
 
 setup:
-  image: mageinferno/magento2-php:7.0.2-fpm-0
+  image: dimasch/magento2-php:7.0.2-fpm-1
   command: /usr/local/bin/mage-setup
   links:
     - db
@@ -59,11 +59,13 @@ setup:
     - M2SETUP_DB_NAME=magento2
     - M2SETUP_DB_USER=magento2
     - M2SETUP_DB_PASSWORD=magento2
-    - M2SETUP_BASE_URL=http://mysite.com/
+    - M2SETUP_BASE_URL=http://m2.docker/
     - M2SETUP_ADMIN_FIRSTNAME=Admin
     - M2SETUP_ADMIN_LASTNAME=User
     - M2SETUP_ADMIN_EMAIL=dummy@gmail.com
     - M2SETUP_ADMIN_USER=magento2
     - M2SETUP_ADMIN_PASSWORD=magento2
-    - M2SETUP_VERSION=2.0.0
+    - M2SETUP_VERSION=2.0.2
+    - M2SETUP_USE_ARCHIVE=false
     - M2SETUP_USE_SAMPLE_DATA=true
+    - M2SETUP_PROJECT_URL=https://github.com/magento/magento2-community-edition.git
