@@ -3,6 +3,7 @@
 
 app:
   image: mageinferno/magento2-nginx:1.9.9-1
+  dns: 8.8.8.8
   ports:
     - "80:80"
   links:
@@ -19,9 +20,11 @@ appdata:
   volumes:
     - ./src:/src
     - ~/.composer:/root/.composer
+    - ~/.ssh:/root/.ssh
 
 "php-fpm":
   image: dimasch/magento2-php:7.0.2-fpm-1
+  dns: 8.8.8.8
   links:
     - db
   volumes_from:
@@ -50,6 +53,7 @@ dbdata:
 setup:
   image: dimasch/magento2-php:7.0.2-fpm-1
   command: /usr/local/bin/mage-setup
+  dns: 8.8.8.8
   links:
     - db
   volumes_from:
