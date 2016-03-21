@@ -23,7 +23,7 @@ appdata:
     - ~/.ssh:/root/.ssh
 
 "php-fpm":
-  image: dimasch/magento2-php:7.0.2-fpm-1
+  image: komplizierte/docker-magento2-php
   dns: 8.8.8.8
   links:
     - db
@@ -51,7 +51,7 @@ dbdata:
     - /var/lib/mysql
 
 setup:
-  image: dimasch/magento2-php:7.0.2-fpm-1
+  image: komplizierte/docker-magento2-php
   command: /usr/local/bin/mage-setup
   dns: 8.8.8.8
   links:
