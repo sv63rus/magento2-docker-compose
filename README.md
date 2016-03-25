@@ -13,7 +13,7 @@ This file is provided as an example development environment using Mage Inferno M
 ## docker-compose.yml
 
 ```
-# Mage Inferno Docker Compose (https://github.com/mageinferno/magento2-docker-compose)
+# Mage Inferno Docker Compose (https://github.com/dimasch/magento2-docker-compose)
 # Version 2.1.0
 
 app:
