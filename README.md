@@ -1,10 +1,10 @@
 This docker-compose.yml file is provided by Mage Inferno
 
-Author: Mark Shust <mark.shust@mageinferno.com>
+Author: Dmitry Schegolihin <d.schegolikhin@kt-team.de>
 
 ## Docker Hub
 
-View our Docker Hub images at [https://hub.docker.com/u/mageinferno/](https://hub.docker.com/u/mageinferno/)
+View our Docker Hub images at [https://hub.docker.com/r/komplizierte/](https://hub.docker.com/r/komplizierte/)
 
 ## Usage
 
@@ -153,15 +153,13 @@ Please see the appropriate images for available values:
 - <a href="https://github.com/mageinferno/docker-magento2-php#variables" target="_blank">mageinferno/php-fpm</a>
 - <a href="https://github.com/mageinferno/docker-magento2-nginx#variables" target="_blank">mageinferno/nginx</a>
 
-## OS X / Dinghy
+## Mac OS X
 
-To use this image on other systems for local development, create a Dockerfile with anything specific to your local development platform.
-
-For example, if using [Dinghy](https://github.com/codekitchen/dinghy) on OS X, use:
+To use this image on other systems for local development, create a Dockerfile with anything specific to your local development platform:
 
 ```
 FROM komplizierte/docker-magento2-php
-RUN usermod -u 501 www-data
+RUN usermod -u 502 www-data
 ```
 
 Then build your custom image:
