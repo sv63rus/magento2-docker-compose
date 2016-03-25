@@ -12,7 +12,7 @@ app:
   volumes_from:
     - appdata
   environment:
-    - APP_MAGE_MODE=production
+    - APP_MAGE_MODE=developer
 #   - VIRTUAL_HOST=m2.docker
 
 appdata:
@@ -30,7 +30,7 @@ appdata:
   volumes_from:
     - appdata
   environment:
-    - APP_MAGE_MODE=production
+    - APP_MAGE_MODE=developer
     - PHP_MEMORY_LIMIT=4G
 
 db:
