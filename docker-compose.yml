@@ -73,4 +73,4 @@ setup:
     - M2SETUP_VERSION=2.0.2
     - M2SETUP_USE_ARCHIVE=false
     - M2SETUP_USE_SAMPLE_DATA=true
-    - M2SETUP_PROJECT_URL=git@github.com:dimasch/magento2-project-community-edition.git
+    - M2SETUP_PROJECT_URL=https://github.com/dimasch/magento2-project-community-edition.git
